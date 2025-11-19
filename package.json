@@ -1,0 +1,22 @@
+{
+  "name": "team-token-locker",
+  "version": "1.0.0",
+  "description": "Token locker with 1-year cliff and 4-year vesting",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy-local": "hardhat run scripts/deploy.js --network localhost"
+  },
+  "keywords": ["vesting", "token", "locker"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.4"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.1",
+    "dotenv": "^16.3.1"
+  }
+}
