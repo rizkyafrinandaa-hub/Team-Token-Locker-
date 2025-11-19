@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Token Locker - Vesting Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.8.0/dist/web3.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔒 Team Token Locker</h1>
+        <div class="notification" id="notification"></div>
+        
+        <div class="wallet-section">
+            <p id="walletStatus">Not Connected</p>
+            <button id="connectBtn" onclick="connectWallet()">Connect Wallet</button>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Total Locked</h3>
+                <div class="value" id="totalLocked">0 TTT</div>
+            </div>
+            <div class="info-card">
+                <h3>Vested Amount</h3>
+                <div class="value" id="vestedAmount">0 TTT</div>
+            </div>
+            <div class="info-card">
+                <h3>Released Amount</h3>
+                <div class="value" id="releasedAmount">0 TTT</div>
+            </div>
+            <div class="info-card">
+                <h3>Claimable Now</h3>
+                <div class="value" id="claimableAmount">0 TTT</div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <h2>Vesting Progress</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%">0%</div>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <h2>Unlock Schedule</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Milestone</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="scheduleBody">
+                    <tr>
+                        <td colspan="4" style="text-align: center;">Connect wallet to view schedule</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="action-section">
+            <h2>Claim Vested Tokens</h2>
+            <p>Next unlock: <strong id="nextUnlock">-</strong></p>
+            <button id="claimBtn" onclick="claimTokens()" disabled>Claim Tokens</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
